@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php?s=/$1 [QSA,PT,L]
+
+RewriteCond % !^$
+RewriteRule ^/?(.*)/.*\.sql - [F]
+RewriteRule app/(.*).(php)$ – [F]
+RewriteRule data/(.*).(php)$ – [F]
+RewriteRule include/(.*).(php)$ – [F]
+RewriteRule themes/(.*).(php)$ – [F]
+</IfModule>
